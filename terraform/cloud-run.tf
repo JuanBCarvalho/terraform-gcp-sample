@@ -8,7 +8,7 @@ resource "google_cloud_run_v2_service" "hello_world" {
   name     = var.service_name
   location = var.region
   project  = var.project_id
-
+  deletion_protection=false
   template {
     containers {
       image = "us-docker.pkg.dev/cloudrun/container/hello"
